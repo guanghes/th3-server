@@ -1,4 +1,4 @@
-FROM localhost:5000/python:3
+FROM python:3
 ENV TZ America/Los_Angeles
 WORKDIR /usr/src/app
 COPY requirements.txt ./
