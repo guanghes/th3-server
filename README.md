@@ -14,5 +14,4 @@ A bash script will run repeat checking the version number of the TH3-Server usin
 ### To build the demo system:
 Spin up CentOS/OracleLinux 7 on a public cloud provider
 Install Docker engine
-Pull container registry image and run it at localhost: docker run -d -p 5000:5000 --restart=always --name registry registry:2
-Pull python:3 image and tag it localhost:5000/python:3 and push to the local registry
+Pull python:3 image and tag it Docker hub's guanghes/python:3 and push to the local registry
