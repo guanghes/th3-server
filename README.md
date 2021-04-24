@@ -1,5 +1,7 @@
 # th3-server
 ## Demo of blue green deployment
+Diagram:
+![TH3 Server CI/CD Diagram](/TH3-Server-CICD-Diagram.png)
 Usage:
 From your browser, type: http://th3.servegame.com/version to get the current server version
 Make changes to the th3-server.py by modifying version number with one incremental number, like change the line __version__ = "0.0.1"
