@@ -8,7 +8,7 @@ from typing import Any, Dict, Callable, Union, List
 import redis
 from bottle import request, response, Bottle
 
-__version__ = "0.0.3"
+__version__ = "0.0.1"
 
 TRANSLATIONS = {
     "Victory or Death": "Lok'Tar Ogar",
