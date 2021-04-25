@@ -1,18 +1,18 @@
 # Automated CI/CD with Blue Green Deployment
-### Purpose
+### PURPOSE
 This project is to demonstrate a fully automated Bash version of CI/CD pipeline using Jenkins, GitHub, DockerHub, Public Cloud VM (Oracle OCI free tier), Public Cloud L7 Load Balancer (Oracle OCI free tier) from Developer code check in to automated deployment to the production without any manual intervention.
 
-### Infrastructure Diagram:
+### INFRASTRUCTURE DIAGRAM:
 ![CICD Diagram](/CICD-Diagram.png)
 
-### Usage:
+### USAGE:
 * From your browser, type: http://th3.servegame.com/version to get the current server version
 * Modify the __version__ = "0.0.1" in https://github.com/guanghes/th3-server/blob/main/th3-server.py to "0.0.2" or newer version.
 * Wait for about 2 minutes (depends on VM and network speed)
 * From your browser, type: http://th3.servegame.com/version to get the newer server version
 * Alternatively, run a [healCheck.sh script](https://github.com/guanghes/cicd/blob/main/healthCheck.sh) to check the during the deployment period that no service downtime.
 
-### Infrastructure Components:
+### INFRASTRUCTURE COMPONENTS:
 **GitHub Repository**:
 * th3-server: Developer Code
 * cicd: Published Continous Delivery Code
@@ -54,7 +54,7 @@ Use AWS CLI or OCI CLI to automatically register newly created instances (contai
 Make one online and the other offline (blue and green alternatively).
 Because there is a short period of time (about 10 seconds) blue/green co-existing time, accessing the Load Balander end point will get the round-robin blue deployment's app or green deployment app (new version and old version coexist)
 
-**Workflow**:
+### WORKFLOW:
 1. A developer check in code change to git repo: th3-server
 2. Jenkins periodically check the linked GitHub repo every one minute. Once detected code check in, Jenkins will trigger a build process, to git pull the th3-server repo and use Dockerfile to build a docker image, and tag it with current timestamp and upload to Docker Hub
 3. This th3-server job will trigger another CD job
@@ -66,7 +66,7 @@ Because there is a short period of time (about 10 seconds) blue/green co-existin
 9. CD job will git push the updated code to the cicd-private repo. (cicd is same as cicd-repo, but with scrambled password)
 10. User access http://th3.servegame.com/version will refelect the newly updated version.
 
-**Imporovement Considerations**:
+### IMPROVEMENT CONSIDERATIONS:
 * Some bash code optimization could be achieved.
 * Change Jenkins build triggering mechanism to "GitHub hook trigger for GITScm polling" option, instead of "Poll SCM" option, then Jenkins will be triggered by GitHub check in event, not using periodical polling. Push mode is more efficient, build triggering delay will be minimum. Pull SCM mode will have maximum delay to 1 minute.
 * Blue/Green deployment target could be HA enabled, same blue deployment containers could be running on multiple Docker Hosts, and green deployment containers could be running on multiple Docker Hosts as well. While switching from blue to green, just switch one set of containers with certain port numbers associated with blue deployment, and destroy the containers with another set of ports in green deployment.
