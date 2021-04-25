@@ -6,11 +6,11 @@ This project is to demonstrate a fully automated Bash version of CI/CD pipeline 
 ![CICD Diagram](/CICD-Diagram.png)
 
 ### Usage:
-From your browser, type: http://th3.servegame.com/version to get the current server version
-Modify the __version__ = "0.0.1" in https://github.com/guanghes/th3-server/blob/main/th3-server.py to "0.0.2" or newer version.
-Wait for about 2 minutes (depends on VM and network speed)
-From your browser, type: http://th3.servegame.com/version to get the newer server version
-Alternatively, run a [healCheck.sh script](https://github.com/guanghes/cicd/blob/main/healthCheck.sh) to check the during the deployment period that no service downtime.
+* From your browser, type: http://th3.servegame.com/version to get the current server version
+* Modify the __version__ = "0.0.1" in https://github.com/guanghes/th3-server/blob/main/th3-server.py to "0.0.2" or newer version.
+* Wait for about 2 minutes (depends on VM and network speed)
+* From your browser, type: http://th3.servegame.com/version to get the newer server version
+* Alternatively, run a [healCheck.sh script](https://github.com/guanghes/cicd/blob/main/healthCheck.sh) to check the during the deployment period that no service downtime.
 
 ### Infrastructure Components:
 **GitHub Repository**:
