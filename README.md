@@ -1,6 +1,6 @@
-# Demo of blue green deployment
+# Automated CI/CD with Blue Green Deployment
 ### Purpose
-This project is to demonstrate a fully automated Bash version of CI/CD pipeline using Jenkins, GitHub, DockerHub, Public Cloud VM (Oracle OCI free tier), Public Cloud L7 Load Balancer (Oracle OCI free tier) from Developer code check in to automated deployment to the production without any manual intervension.
+This project is to demonstrate a fully automated Bash version of CI/CD pipeline using Jenkins, GitHub, DockerHub, Public Cloud VM (Oracle OCI free tier), Public Cloud L7 Load Balancer (Oracle OCI free tier) from Developer code check in to automated deployment to the production without any manual intervention.
 
 ### Infrastructure Diagram:
 ![CICD Diagram](/CICD-Diagram.png)
