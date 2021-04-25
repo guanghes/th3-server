@@ -3,7 +3,7 @@
 This project is to demonstrate a fully automated Bash version of CI/CD pipeline using Jenkins, GitHub, DockerHub, Public Cloud VM (Oracle OCI free tier), Public Cloud L7 Load Balancer (Oracle OCI free tier) from Developer code check in to automated deployment to the production without any manual intervension.
 
 ### Infrastructure Diagram:
-![TH3 Server CI/CD Diagram](/TH3-Server-CICD-Diagram.png)
+![CICD Diagram](/CICD-Diagram.png)
 
 ### Usage:
 From your browser, type: http://th3.servegame.com/version to get the current server version
