@@ -20,12 +20,14 @@ This project is to demonstrate a fully automated Bash version of CI/CD pipeline 
 
 **Container Registry**:
 * DockerHub: https://hub.docker.com
-* APP Image: guanghes/th3-server:<tag>  e.g. docker pull guanghes/th3-server:2021-0424-1501
+* APP Image: guanghes/th3-server:<tag>  e.g. $ docker pull guanghes/th3-server:2021-0424-1501
 
 **Jenkins**:
-* Two projects: One upstream project to do CI job, and downstream project to do CD job.
-Running on node-2 (blue) server
-OCI Internal IP: 172.16.0.102
+* Two projects: One upstream project to do CI job, and one downstream project to do CD job.
+* CI job triggers CD job and transfer the build nubmer as a parameter.
+* Running on node-2 (blue) server, should be different server in production.
+* OCI Internal IP: 172.16.0.102
+* Jenkins port: 8080
 
 **Docker Host**:
 * Running on Public Cloud. it could be on AWS, GCP, Azure or OCI, two nodes are located at different Availability Zones (AZ, AWS terminology) or Availability Domain (AD, OCI terminology) in order to improve High Availability(HA).
@@ -36,14 +38,14 @@ OCI Internal IP: 172.16.0.102
 
 **Dynamic DNS**:
 * DNS name registered at free ddns.net with following entries for easier access. This could be regsitered at your own DNS provider.
-* L7 load balancer: th3.servegame.com
-* node-1: th3-server.ddns.net
-* node-2: th3server.ddns.net
+* HTTP L7 load balancer: th3.servegame.com
+* node-1 (green): th3-server.ddns.net
+* node-2 (blue): th3server.ddns.net
 
 **Docker Containers**:
 * Ideal Scenario (HA enabled):
-  * Green deployment: node-1 and node-2 with container port exposed to 8081
-  * Blue deployment: node-1 and node-2 with container port exposed to 8082
+  * Green deployment: node-1 and node-2 respectively with the container port exposed to 8081
+  * Blue deployment: node-1 and node-2 respectively with the container port exposed to 8082
 * In this demo Scenario (Simple):
   * Green deployment: node-1 with container port exposed to 8081
   * Blue deployment: node-2 with container port exposed to 8081
